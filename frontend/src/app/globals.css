@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy-dark: #0B1120;
+    --brand-navy: #0F172A;
+    --brand-navy-card: #1E293B;
+    --brand-navy-border: #334155;
+    --brand-gold: #F59E0B;
+    --brand-gold-hover: #D97706;
+    --brand-gold-light: #FEF3C7;
+    --brand-emerald: #10B981;
+    --brand-emerald-light: #D1FAE5;
+    --brand-rose: #F43F5E;
+    --brand-rose-light: #FFE4E6;
+    --brand-blue: #3B82F6;
+    --text-primary: #0F172A;
+    --text-muted: #64748B;
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --shadow-soft: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    --shadow-elevated: 0 20px 30px -10px rgba(15, 23, 42, 0.12), 0 10px 15px -5px rgba(15, 23, 42, 0.06);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+}
+
+/* Custom UI Utilities & Micro-Animations */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-navy {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.7);
+}
+
+.badge-available {
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.badge-borrowed {
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid #CBD5E1;
+}
+
+.badge-overdue {
+  background: #FFF1F2;
+  color: #BE123C;
+  border: 1px solid #FECDD3;
+}
+
+.badge-reserved {
+  background: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.glow-gold:hover {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.pulse-active {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
